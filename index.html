@@ -13,6 +13,9 @@
     <!-- tailwind style  -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
+    <!-- Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
     <!-- main style  -->
     <link rel="stylesheet" href="style.css">
 
@@ -563,12 +566,13 @@
 
                                 <form action="#" class="border-2 py-2 px-6">
                                     <div class="flex input-group w-full">
-                                        <input type="text" class="border-r" style="width:55%;"
+                                        <input type="text" class="border-r outline-none	" style="width:55%;"
                                             placeholder="Search for products">
 
                                         <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
-                                        <select class="border-r px-2" name="category_name">
-                                            <option value="">SELECT CATEGORY</option>
+
+                                        <select class="border-r px-2 outline-none text-gray-300" name="category_name">
+                                            <option class="" value="">SELECT CATEGORY</option>
                                             <option value="codex">Clocks</option>
                                             <option value="comments">Toys</option>
                                             <option value="content">Liting</option>
@@ -589,7 +593,7 @@
 
                     <div class="ml-auto flex items-center">
                         <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
-                            <a href="#" class="text-sm font-medium text-gray-800 hover:text-gray-500">LOGIN /
+                            <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-500">LOGIN /
                                 REGISTER</a>
                         </div>
 
@@ -627,7 +631,7 @@
             </nav>
 
             <!-- desktop menubar -->
-            <div class="border border-gray-300">
+            <div class="border border-gray-200">
                 <div class="max-w-7xl mx-auto">
                     <div class="flex justify-between">
 
@@ -635,25 +639,25 @@
                             class="h-14 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
 
                             <p class="px-2 category color-green"><i class="fas fa-bars mx-2"></i>BROWSE CATEGORIES<i
-                                    class="fas fa-chevron-down pl-10 pr-2"></i></p>
+                                    class="fas fa-chevron-down pl-16 pr-5"></i></p>
 
-                            <p class="ml-6 text-green ">HOME<i
+                            <p class="ml-6 text-green">HOME<i
                                     class="text-gray-300 text-xs fas fa-chevron-down ml-1 mr-4"></i>
                             </p>
 
-                            <p class="text-gray-700">SHOP<i
+                            <p class="text-gray-600">SHOP<i
                                     class="text-gray-300 text-xs fas fa-chevron-down ml-1 mr-4"></i>
                             </p>
-                            <p class="text-gray-700">BLOG<i
+                            <p class="text-gray-600">BLOG<i
                                     class="text-gray-300 text-xs fas fa-chevron-down ml-1 mr-4"></i>
                             </p>
-                            <p class="text-gray-700">PAGES<i
+                            <p class="text-gray-600">PAGES<i
                                     class="text-gray-300 text-xs fas fa-chevron-down ml-1 mr-4"></i>
                             </p>
-                            <p class="text-gray-700">ELEMENTS<i
+                            <p class="text-gray-600">ELEMENTS<i
                                     class="text-gray-300 text-xs fas fa-chevron-down ml-1 mr-4"></i>
                             </p>
-                            <p class="text-gray-700">BUY</p>
+                            <p class="text-gray-600">BUY</p>
 
                         </div>
 
@@ -665,11 +669,221 @@
 
                                 <span class="h-4 w-px bg-gray-300 mx-4" aria-hidden="true"></span>
 
-                                <p class="text-gray-700">PURCHASE THEME</p>
+                                <p class="text-gray-600">PURCHASE THEME</p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- banner section  -->
+            <div class="bg-gray-50 banner-height">
+                <div class="max-w-7xl mx-auto">
+                    <div class="grid grid-cols-12">
+
+                        <!-- sidebar section  -->
+                        <div class="col-span-3 pl-4 sm:pl-6 lg:pl-8 mr-2">
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Furniture</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Cooking</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Accessories</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Fashion</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Clocks</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Lighting</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Toys</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600 block">Electronics</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="px-2 py-2 border border-gray-100 bg-white">
+
+                                <div class="grid grid-cols-3 ">
+                                    <div class="col-span-1 flex items-center">
+                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                        <span class="text-gray-600">Minimalism</span>
+                                    </div>
+
+                                    <div class="col-span-2 flex justify-end items-center">
+                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                        <!-- banner section  -->
+                        <div class="col-span-9">
+
+                            <section class="home">
+                                <div class="slider px-24">
+                                    <div class="slide active p-10">
+                                        <div class="container">
+                                            <div class="caption">
+                                                <h1>1. Winter Collection 2020</h1>
+                                                <p>Lorem ipsum dummy text goes here.</p>
+                                                <a href="">Shop Now</a>
+                                            </div>
+                                        </div>
+
+                                        <img src="./assets/img/plastic.png" alt="">
+                                    </div>
+                                    <div class="slide p-10">
+
+                                        <div class="container">
+                                            <div class="caption">
+                                                <h1>2. Winter Collection 2020</h1>
+                                                <p>Lorem ipsum dummy text goes here.</p>
+                                                <a href="">Shop Now</a>
+                                            </div>
+                                        </div>
+                                        <img src="./assets/img/wooden.png" alt="">
+                                    </div>
+
+                                    <div class="slide p-10">
+
+                                        <div class="container">
+                                            <div class="caption">
+                                                <h1>3. Winter Collection 2020</h1>
+                                                <p>Lorem ipsum dummy text goes here.</p>
+                                                <a href="">Shop Now</a>
+                                            </div>
+                                        </div>
+                                        <img src="./assets/img/slice.png" alt="">
+                                    </div>
+                                </div>
+
+                                <!-- controls  -->
+                                <div class="controls">
+
+                                    <div class="next"><i class="fas fa-chevron-right"></i></div>
+                                </div>
+
+                                <!-- indicators -->
+                                <div class="indicator hidden">
+                                </div>
+
+                            </section>
+
+                        </div>
+                        <div class="controls">
+                            <div class="prev"><i class="fas fa-chevron-left"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
             </div>
         </header>
     </div>
@@ -692,6 +906,10 @@
 
     <!-- main script  -->
     <script src="./app.js"></script>
+
+    <!-- slider script  -->
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>-->
+    <script src="./slider.js"></script>
 </body>
 
 </html>
