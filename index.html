@@ -13,69 +13,38 @@
     <!-- tailwind style  -->
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
-    <!-- Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
     <!-- main style  -->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/slider.css">
 
     <title>WoodMart Header</title>
 </head>
 
 <body>
 
-    <!----------
-    header start 
-    ------------>
-    <!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
--->
-    <div class="bg-white">
-        <!--
-      Mobile menu
-  
-      Off-canvas menu for mobile, show/hide based on off-canvas menu state.
-    -->
-        <div class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
-            <!--
-        Off-canvas menu overlay, show/hide based on off-canvas menu state.
-  
-        Entering: "transition-opacity ease-linear duration-300"
-          From: "opacity-0"
-          To: "opacity-100"
-        Leaving: "transition-opacity ease-linear duration-300"
-          From: "opacity-100"
-          To: "opacity-0"
-      -->
-            <div class="fixed inset-0 bg-black bg-opacity-25" aria-hidden="true"></div>
 
-            <!--
-        Off-canvas menu, show/hide based on off-canvas menu state.
-  
-        Entering: "transition ease-in-out duration-300 transform"
-          From: "-translate-x-full"
-          To: "translate-x-0"
-        Leaving: "transition ease-in-out duration-300 transform"
-          From: "translate-x-0"
-          To: "-translate-x-full"
-      -->
-            <div class="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto">
+
+    <div class="bg-white">
+
+        <!-- mobile top bar -->
+        <div
+            class="color-green h-10 flex md:hidden items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8 md:flex">
+
+            <div class="text-lg md:text-xs">
+                <i class="pr-2 fab fa-facebook-f"></i>
+                <i class="pr-2 fab fa-twitter"></i>
+                <i class="pr-2 fab fa-linkedin-in"></i>
+                <i class="pr-2 fab fa-instagram"></i>
+                <i class="pr-2 fab fa-youtube"></i>
+                <i class="pr-4 fab fa-pinterest-square"></i>
+            </div>
+        </div>
+        <div class="fixed inset-0 flex z-40 lg:hidden" role="dialog" aria-modal="true">
+
+            <div class="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto mobile-menu">
                 <div class="px-4 pt-5 pb-2 flex">
                     <button type="button"
-                        class="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400">
+                        class="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400 close  mobile-menu-button">
                         <span class="sr-only">Close menu</span>
                         <!-- Heroicon name: outline/x -->
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -90,14 +59,14 @@
                 <div class="mt-2">
                     <div class="border-b border-gray-200">
                         <div class="-mb-px flex px-4 space-x-8" aria-orientation="horizontal" role="tablist">
-                            <!-- Selected: "text-indigo-600 border-indigo-600", Not Selected: "text-gray-900 border-transparent" -->
+
+
                             <button id="tabs-1-tab-1"
                                 class="text-gray-900 border-transparent flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
                                 aria-controls="tabs-1-panel-1" role="tab" type="button">
                                 Women
                             </button>
 
-                            <!-- Selected: "text-indigo-600 border-indigo-600", Not Selected: "text-gray-900 border-transparent" -->
                             <button id="tabs-1-tab-2"
                                 class="text-gray-900 border-transparent flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
                                 aria-controls="tabs-1-panel-2" role="tab" type="button">
@@ -485,7 +454,7 @@
                     <div class="flex justify-between">
 
                         <div
-                            class="h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
+                            class="hidden md:flex h-10 items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
 
                             <span class="h-10 w-px bg-gray-300" aria-hidden="true"></span>
 
@@ -504,10 +473,13 @@
                         </div>
 
 
-                        <div
-                            class="h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8">
 
-                            <div class="text-xs">
+
+                        <!-- desktop  -->
+                        <div
+                            class="h-10 flex items-center justify-center text-sm font-medium text-white px-4 sm:px-6 lg:px-8 hidden md:flex">
+
+                            <div class="text-lg md:text-xs">
                                 <i class="pr-2 fab fa-facebook-f"></i>
                                 <i class="pr-2 fab fa-twitter"></i>
                                 <i class="pr-2 fab fa-linkedin-in"></i>
@@ -516,7 +488,7 @@
                                 <i class="pr-4 fab fa-pinterest-square"></i>
                             </div>
 
-                            <div class="h-10 flex items-center justify-center text-xs text-white">
+                            <div class="h-10 items-center flex justify-center text-xs text-white">
                                 <span class="h-10 w-px bg-gray-300" aria-hidden="true"></span>
 
                                 <p class="px-2"><i class="far fa-envelope pr-1"></i>NEWSLETTER</p>
@@ -539,9 +511,11 @@
             <!-- desktop searchbar -->
             <nav aria-label="Top" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="h-24 flex items-center">
+
                     <!-- Mobile menu toggle, controls the 'mobileMenuOpen' state. -->
-                    <button type="button" class="bg-white p-2 rounded-md text-gray-400 lg:hidden">
+                    <button type="button" class="bg-white p-2 rounded-md text-gray-400 lg:hidden  mobile-menu-button">
                         <span class="sr-only">Open menu</span>
+
                         <!-- Heroicon name: outline/menu -->
                         <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor" aria-hidden="true">
@@ -562,16 +536,15 @@
                     <div class="hidden lg:ml-8 lg:block lg:self-stretch">
                         <div class="h-full flex space-x-8">
 
-                            <div class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">
+                            <div class="flex items-center text-sm font-medium ml-8">
 
-                                <form action="#" class="border-2 py-2 px-6">
+                                <form action="#" class="hidden md:block border-2 py-2 px-6">
                                     <div class="flex input-group w-full">
-                                        <input type="text" class="border-r outline-none	" style="width:55%;"
-                                            placeholder="Search for products">
+                                        <input type="text" class="outline-none" placeholder="Search for products">
 
-                                        <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                                        <span class="h-6 w-px bg-gray-200 ml-20" aria-hidden="true"></span>
 
-                                        <select class="border-r px-2 outline-none text-gray-300" name="category_name">
+                                        <select class="px-2 outline-none text-gray-400" name="category_name">
                                             <option class="" value="">SELECT CATEGORY</option>
                                             <option value="codex">Clocks</option>
                                             <option value="comments">Toys</option>
@@ -579,10 +552,10 @@
                                             <option value="content">Others</option>
                                         </select>
 
-                                        <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
+                                        <span class="h-6 w-px bg-gray-200 mx-1" aria-hidden="true"></span>
                                         <div class="input-group-append">
                                             <button type="submit">
-                                                <i class="fa fa-search px-2"></i>
+                                                <i class="fa fa-search px-2 text-gray-400 text-lg"></i>
                                             </button>
                                         </div>
                                     </div>
@@ -592,19 +565,19 @@
                     </div>
 
                     <div class="ml-auto flex items-center">
-                        <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                        <div class="hidden md:block lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                             <a href="#" class="text-sm font-medium text-gray-600 hover:text-gray-500">LOGIN /
                                 REGISTER</a>
                         </div>
 
-                        <div class="hidden lg:ml-8 lg:flex">
+                        <div class="hidden md:block ml-4 lg:flex">
                             <a href="#" class="text-gray-800 hover:text-gray-500">
                                 <i class="h-6 w-6 far fa-heart"></i>
                             </a>
                         </div>
 
-                        <!-- Search -->
-                        <div class="flex lg:ml-6">
+                        <!-- Shaffle -->
+                        <div class="hidden md:block flex ml-4">
                             <a href="#" class="p-2 text-gray-800 hover:text-gray-500">
                                 <span class="sr-only">Shaffle</span>
                                 <i class="h-6 w-6 fas fa-random"></i>
@@ -612,7 +585,7 @@
                         </div>
 
                         <!-- Cart -->
-                        <div class="ml-4 flow-root lg:ml-6">
+                        <div class="flow-root ml-4">
                             <a href="#" class="group -m-2 p-2 flex items-center">
                                 <!-- Heroicon name: outline/shopping-bag -->
                                 <svg class="flex-shrink-0 h-6 w-6 text-gray-800 group-hover:text-gray-500"
@@ -622,7 +595,7 @@
                                         d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                                 </svg>
                                 <span
-                                    class="ml-2 text-sm font-medium text-gray-800 group-hover:text-gray-500">$0.00</span>
+                                    class="hidden md:block ml-2 text-sm font-medium text-gray-800 group-hover:text-gray-500">$0.00</span>
                                 <span class="sr-only">items in cart, view bag</span>
                             </a>
                         </div>
@@ -631,7 +604,7 @@
             </nav>
 
             <!-- desktop menubar -->
-            <div class="border border-gray-200">
+            <div class="border border-gray-200 hidden md:block">
                 <div class="max-w-7xl mx-auto">
                     <div class="flex justify-between">
 
@@ -682,151 +655,671 @@
                     <div class="grid grid-cols-12">
 
                         <!-- sidebar section  -->
-                        <div class="col-span-3 pl-4 sm:pl-6 lg:pl-8 mr-2">
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
+                        <div class="hidden md:block menu md:col-span-3 pl-4 sm:pl-6 lg:pl-8 mr-2">
+                            <ul class="menu-main">
 
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Furniture</span>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
+
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
+
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="./assets/img/wooden.png" alt="shop">
+                                        </div>
                                     </div>
 
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
-                                    </div>
-                                </div>
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
 
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
 
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
 
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Cooking</span>
-                                    </div>
-
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
-
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Accessories</span>
-                                    </div>
-
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
-
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Fashion</span>
-                                    </div>
-
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
-
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Clocks</span>
-                                    </div>
-
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
-                                    </div>
-                                </div>
-
-
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
-
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Lighting</span>
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="./assets/img/slice.png" alt="shop">
+                                        </div>
                                     </div>
 
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
+
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
+
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
-                                </div>
 
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
 
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
 
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Toys</span>
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
 
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
+
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
+
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
-                                </div>
 
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
 
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
 
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600 block">Electronics</span>
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
 
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
+
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
+
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
-                                </div>
 
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
 
-                            </div>
-                            <div class="px-2 py-2 border border-gray-100 bg-white">
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
 
-                                <div class="grid grid-cols-3 ">
-                                    <div class="col-span-1 flex items-center">
-                                        <i class="fas fa-couch mx-2 text-gray-500"></i>
-                                        <span class="text-gray-600">Minimalism</span>
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
 
-                                    <div class="col-span-2 flex justify-end items-center">
-                                        <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
+
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
+
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
                                     </div>
-                                </div>
+
+                                </li>
+                                <li class="menu-item-has-children px-2 py-2 border border-gray-200 bg-white">
+
+                                    <a href="#" class="grid grid-cols-3">
+                                        <span class="col-span-1 flex items-center">
+                                            <i class="fas fa-couch mx-2 text-gray-500"></i>
+                                            Furniture</span>
+
+                                        <span class="col-span-2 flex justify-end items-center">
+                                            <i class="text-gray-300 text-xs fas fa-chevron-right mr-4"></i>
+                                        </span>
+                                    </a>
+
+                                    <div class="sub-menu mega-menu mega-menu-column-4">
+                                        <div class="list-item">
+                                            <h4 class="title">Men's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Beauty</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Women's Fashion</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                            <h4 class="title">Furniture</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <h4 class="title">Home, Kitchen</h4>
+                                            <ul>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                                <li><a href="#">Product List</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="list-item">
+                                            <img src="img/shop1.jpg" alt="shop">
+                                        </div>
+                                    </div>
+
+                                </li>
 
 
-                            </div>
-
+                            </ul>
                         </div>
 
                         <!-- banner section  -->
-                        <div class="col-span-9">
+                        <div class="col-span-12 md:col-span-9">
 
-                            <section class="home">
-                                <div class="slider px-24">
-                                    <div class="slide active p-10">
+                            <section class="home container">
+
+                                <div class="slider py-10 md:py-12">
+                                    <div class="slide active space-y-10 md:space-y-0 md:grid md:grid-cols-2">
                                         <div class="container">
                                             <div class="caption">
                                                 <h1>1. Winter Collection 2020</h1>
@@ -835,9 +1328,9 @@
                                             </div>
                                         </div>
 
-                                        <img src="./assets/img/plastic.png" alt="">
+                                        <img class="mobile-effect mobile-hover" src="./assets/img/plastic.png" alt="">
                                     </div>
-                                    <div class="slide p-10">
+                                    <div class="slide space-y-10 md:space-y-0 md:grid md:grid-cols-2">
 
                                         <div class="container">
                                             <div class="caption">
@@ -846,10 +1339,10 @@
                                                 <a href="">Shop Now</a>
                                             </div>
                                         </div>
-                                        <img src="./assets/img/wooden.png" alt="">
+                                        <img class=" mobile-effect mobile-hover" src="./assets/img/wooden.png" alt="">
                                     </div>
 
-                                    <div class="slide p-10">
+                                    <div class="slide space-y-10 md:space-y-0 md:grid md:grid-cols-2">
 
                                         <div class="container">
                                             <div class="caption">
@@ -858,14 +1351,15 @@
                                                 <a href="">Shop Now</a>
                                             </div>
                                         </div>
-                                        <img src="./assets/img/slice.png" alt="">
+                                        <img class=" mobile-effect mobile-hover" src="./assets/img/slice.png" alt="">
                                     </div>
                                 </div>
 
                                 <!-- controls  -->
                                 <div class="controls">
 
-                                    <div class="next"><i class="fas fa-chevron-right"></i></div>
+                                    <div class="next"><i class="fas fa-chevron-right"></i>
+                                    </div>
                                 </div>
 
                                 <!-- indicators -->
@@ -876,7 +1370,8 @@
 
                         </div>
                         <div class="controls">
-                            <div class="prev"><i class="fas fa-chevron-left"></i>
+                            <div class="prev">
+                                <i class="fas fa-chevron-left"></i>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,110 @@
+*{
+	margin:0;
+	box-sizing: border-box;
+}
+:before,:after{
+	box-sizing: border-box;
+}
+
+ul{
+	list-style: none;
+	margin:0;
+	padding:0;
+}
+a {
+	text-decoration: none;
+}
+
+.menu > ul > li .sub-menu{
+	position: absolute;
+	z-index: 500;
+	background-color:#ffffff;
+	box-shadow: -2px 2px 70px -25px rgba(0,0,0,0.3); 
+	padding: 20px 30px;
+	transition: all 0.5s ease;
+	opacity:0;
+	visibility: hidden;
+}
+@media(min-width: 992px){
+  .menu > ul > li.menu-item-has-children:hover .sub-menu{
+	margin-top: 0;
+	visibility: visible;
+	opacity: 1;
+	}
+}
+
+.menu > ul > li .sub-menu > ul > li{
+	line-height: 1;
+}
+.menu > ul > li .sub-menu > ul > li > a{
+	display: inline-block;
+	padding: 10px 0;
+	font-size: 15px;
+	color: #555555;
+	transition: color 0.3s ease;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+
+.menu > ul > li .sub-menu.mega-menu > .list-item > ul > li{
+   line-height: 1;
+   display: block; 
+}
+.menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a {
+	padding:10px 0;
+	display: inline-block;
+	font-size: 15px;
+	color:#555555;
+	transition: color 0.3s ease;
+}
+.menu > ul > li .sub-menu.mega-menu{ 
+    left: 70%;
+    transform: translateX(-70%);	
+}
+
+.menu > ul > li .sub-menu.mega-menu-column-4{
+  max-width: 850px;
+  width: 100%; 	
+  display: flex;
+  flex-wrap: wrap;
+  padding:20px 15px;
+}
+.menu > ul > li .sub-menu.mega-menu-column-4 > .list-item{
+  flex:0 0 25%;
+  padding:0 15px;
+}
+.menu > ul > li .sub-menu.mega-menu-column-4 > .list-item .title{
+	font-size: 16px;
+	color:#83b735;
+	font-weight: 500;
+	line-height: 1;
+	padding:10px 0;
+}
+.menu > ul > li .sub-menu.mega-menu-column-4 > .list-item.text-center .title{
+	text-align: center;
+}
+.menu > ul > li .sub-menu.mega-menu-column-4 > .list-item img{
+	max-width: 100%;
+	width: 100%;
+	vertical-align: middle;
+	margin-top: 10px;
+}
+.menu > ul > li .sub-menu.mega-menu > .list-item > ul > li > a:hover,
+.menu > ul > li .sub-menu > ul > li > a:hover,
+.item-right a:hover,
+.menu > ul > li:hover > a{
+	color:#83b735;
+}
+
+/*responsive*/
+@media(max-width: 991px){
+
+	  .item-left,
+	  .item-right{
+		flex:0 0 auto;
+	}
+	
+	  .item-right{
+		align-items: center;
+	}
+}
