@@ -1,4 +1,18 @@
+body{
+    margin: 0 auto;
+}
+
 /* top bar color  */
 .color-green{
     background-color: #83b735;
+}
+
+/* category padding */
+.category{
+    padding-top: 19px;
+    padding-bottom: 19px;
+}
+
+.text-green{
+    color: #83b735;
 }
